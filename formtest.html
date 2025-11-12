@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Тест формы Google</title>
+</head>
+<body style="font-family:sans-serif;max-width:500px;margin:50px auto;text-align:center;">
+  <h2>Тест отправки в Google Form</h2>
+  <form id="googleForm">
+    <input name="entry.2140997515" placeholder="Название компании" required style="display:block;width:100%;margin:10px 0;padding:10px;">
+    <input name="entry.1623316745" placeholder="Ссылка" required style="display:block;width:100%;margin:10px 0;padding:10px;">
+    <input name="entry.347375426" placeholder="Имя и фамилия" required style="display:block;width:100%;margin:10px 0;padding:10px;">
+    <input name="entry.68207517" placeholder="Должность" required style="display:block;width:100%;margin:10px 0;padding:10px;">
+    <input name="entry.1585182304" placeholder="Телефон" required style="display:block;width:100%;margin:10px 0;padding:10px;">
+    <input name="entry.224323473" type="email" placeholder="Email" required style="display:block;width:100%;margin:10px 0;padding:10px;">
+    <button type="submit" style="background:#0173f9;color:#fff;border:none;padding:12px 24px;font-size:16px;border-radius:8px;cursor:pointer;">Отправить</button>
+  </form>
+
+  <p id="status" style="margin-top:20px;font-weight:bold;"></p>
+
+  <script>
+    document.getElementById('googleForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+
+      fetch('https://docs.google.com/forms/d/e/1FAIpQLSdGeW1Mm7VLEYVVaYVSW2THEeyJ_c36x781V_fxWwgVEeaWJg/formResponse', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      }).then(() => {
+        document.getElementById('status').textContent = '✅ Отправлено! Проверь Google Form';
+        this.reset();
+      }).catch(() => {
+        document.getElementById('status').textContent = '⚠️ Ошибка при отправке';
+      });
+    });
+  </script>
+</body>
+</html>

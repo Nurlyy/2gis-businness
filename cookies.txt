@@ -1,0 +1,8 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.2gis.ru	TRUE	/	FALSE	1999999999	__ddg1_	AbdCr4S4X66lhV4Mmkl7
+.2gis.ru	TRUE	/	FALSE	1999999999	__ddg8_	E6qarvhmlLCSlpfs
+.2gis.ru	TRUE	/	FALSE	1999999999	__ddg10_	1762935059
+.2gis.ru	TRUE	/	FALSE	1999999999	__ddg9_	178.89.244.206
+.yandex.ru	TRUE	/	FALSE	1999999999	bh	YJeC0cgGag/s69e6D7udubEG1e+fzg4=
+
